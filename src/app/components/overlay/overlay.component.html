@@ -1,0 +1,16 @@
+<div
+  class="overlay-backdrop"
+  *ngIf="isVisible$ | async"
+  (click)="close()"
+></div>
+
+<div class="overlay-panel" [class.show]="isVisible$ | async">
+  <div class="overlay-header">
+    <h2>Overlay Title</h2>
+    <button (click)="close()">X</button>
+  </div>
+
+  <div class="overlay-content">
+    <p>This is the content of the overlay.</p>
+  </div>
+</div>
