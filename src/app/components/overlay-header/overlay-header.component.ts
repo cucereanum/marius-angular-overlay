@@ -1,0 +1,22 @@
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-overlay-header',
+  standalone: true,
+  imports: [CommonModule, MatIconModule],
+  templateUrl: './overlay-header.component.html',
+  styleUrls: ['./overlay-header.component.scss'],
+})
+export class OverlayHeaderComponent {
+  @Input() title: string = '';
+  @Input() subtitle: string = '';
+  @Input() tabs: string[] = ['Details', 'Systems', 'References'];
+  @Input() selectedTab: string = '';
+  @Output() tabChanged = new EventEmitter<string>();
+
+  onTabClick(tab: string) {
+    this.tabChanged.emit(tab);
+  }
+}

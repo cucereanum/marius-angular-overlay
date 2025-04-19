@@ -5,12 +5,46 @@
 ></div>
 
 <div class="overlay-panel" [class.show]="isVisible$ | async">
-  <div class="overlay-header">
-    <h2>Overlay Title</h2>
-    <button (click)="close()">X</button>
-  </div>
+  <app-overlay-header
+    [title]="'Amazon.com, Inc.'"
+    [subtitle]="'ID: 1'"
+    [tabs]="['Details', 'Systems', 'References']"
+    [selectedTab]="selectedTab"
+    (tabChanged)="selectedTab = $event"
+  ></app-overlay-header>
 
-  <div class="overlay-content">
-    <p>This is the content of the overlay.</p>
-  </div>
+  <app-collapsible-section
+    title="Tasks"
+    [count]="2"
+    iconName="checklist"
+  ></app-collapsible-section>
+  <app-collapsible-section
+    title="Risks"
+    [count]="0"
+    iconName="warning"
+  ></app-collapsible-section>
+  <app-collapsible-section
+    title="Assets"
+    [count]="0"
+    iconName="inventory_2"
+  ></app-collapsible-section>
+  <app-collapsible-section
+    title="Incidents"
+    [count]="0"
+    iconName="report_problem"
+  ></app-collapsible-section>
+
+  <app-collapsible-section
+    title="Business Functions"
+    [count]="2"
+    iconName="business_center"
+  >
+    <!-- inner content here -->
+  </app-collapsible-section>
+
+  <app-collapsible-section
+    title="Contracts"
+    [count]="0"
+    iconName="description"
+  ></app-collapsible-section>
 </div>

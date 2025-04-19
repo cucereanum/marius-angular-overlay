@@ -1,0 +1,23 @@
+<div class="overlay-header">
+  <div class="header-top">
+    <div class="title-group">
+      <h2 class="title">{{ title }}</h2>
+      <span class="subtitle">{{ subtitle }}</span>
+    </div>
+
+    <button class="action-button">
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+  </div>
+
+  <div class="header-tabs">
+    <div
+      class="tab"
+      *ngFor="let tab of tabs"
+      [class.active]="tab === selectedTab"
+      (click)="onTabClick(tab)"
+    >
+      {{ tab }}
+    </div>
+  </div>
+</div>
