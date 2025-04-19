@@ -1,12 +1,20 @@
+:host {
+  display: block;
+  margin-top: 1.4rem;
+
+  &.first {
+    margin-top: 0;
+  }
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background: #f5f5f5;
+  background-color: #f5f5f5;
   border-top: 1px solid #e0e0e0;
   cursor: pointer;
   font-weight: 600;
-  margin-top: 20px;
   .left {
     display: flex;
     align-items: center;
@@ -23,10 +31,10 @@
   .right {
     display: flex;
     flex-direction: row;
-    justify-content: center; // ✅ centers items horizontally
-    align-items: center; // ✅ vertically centers icons
+    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
-    min-width: 80px; // optional: keeps space for layout symmetry
+    min-width: 80px;
   }
 
   .icon-button {
@@ -37,8 +45,8 @@
   }
 
   .expand-icon {
-    font-size: 36px; // ✅ make arrow visibly larger
-    line-height: 1; // 🔧 fix internal vertical spacing
+    font-size: 36px;
+    line-height: 1;
   }
 
   .rotated {
@@ -49,7 +57,6 @@
 .section-body {
   padding: 1rem;
   background: #ffffff;
-  border-top: 1px solid #ddd;
 }
 
 .section-badge {

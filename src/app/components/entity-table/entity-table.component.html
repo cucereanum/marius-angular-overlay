@@ -1,0 +1,21 @@
+<table class="entity-table">
+  <thead>
+    <tr>
+      <th class="name-header">Name</th>
+      <th class="actions-header"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td class="name-cell">{{ item.name }}</td>
+      <td class="actions-cell">
+        <div class="action-wrapper">
+          <button class="action-button">Preview</button>
+          <button class="action-button icon-btn">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,79 @@
+.entity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+
+  thead {
+    background-color: #f7f8fa;
+
+    th {
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+      color: #444;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .name-header {
+      width: 70%;
+      border-right: 1px solid #e0e0e0;
+    }
+
+    .actions-header {
+      width: 20%;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #f0f0f0;
+
+      td {
+        padding: 4px 12px;
+        vertical-align: middle;
+      }
+
+      .name-cell {
+        width: 80%;
+      }
+
+      .actions-cell {
+        width: 20%;
+        border-left: 1px solid #e0e0e0;
+        box-shadow: -6px 0 6px -4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .action-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .action-button {
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    padding: 0px 4px;
+    font-size: 12px;
+    cursor: pointer;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-btn {
+    width: 24px;
+    padding: 0;
+  }
+
+  mat-icon {
+    font-size: 20px;
+    color: #555;
+  }
+}

@@ -1,18 +1,22 @@
-<div class="section-header" (click)="toggle()">
-  <div class="left">
-    <mat-icon class="section-icon">{{ iconName }}</mat-icon>
-    <span class="section-title">{{ title }}</span>
-    <span class="section-badge">{{ count }}</span>
+<div class="section-container">
+  <div class="section-header" (click)="toggle()">
+    <div class="left">
+      <mat-icon class="section-icon">{{ iconName }}</mat-icon>
+      <span class="section-title">{{ title }}</span>
+      <span class="section-badge">{{ count }}</span>
+    </div>
+
+    <div class="right">
+      <mat-icon class="icon-button">more_horiz</mat-icon>
+      <mat-icon class="icon-button expand-icon">
+        {{ isOpen ? "expand_more" : "chevron_right" }}
+      </mat-icon>
+    </div>
   </div>
 
-  <div class="right">
-    <mat-icon class="icon-button">more_horiz</mat-icon>
-    <mat-icon class="icon-button expand-icon">
-      {{ isOpen ? "expand_more" : "chevron_right" }}
-    </mat-icon>
+  <div class="section-body" *ngIf="isOpen">
+    <ng-container *ngIf="isOpen && count > 0">
+      <app-entity-table [items]="sectionItems"></app-entity-table>
+    </ng-container>
   </div>
-</div>
-
-<div class="section-body" *ngIf="isOpen">
-  <ng-content></ng-content>
 </div>
