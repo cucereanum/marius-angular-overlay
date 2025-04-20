@@ -1,48 +1,91 @@
+@use "../../../styles/theme" as *;
+
 .entity-table {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  border: 1px solid #e0e0e0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: $font-size-base;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  overflow: hidden;
 
   thead {
-    background-color: #f7f8fa;
+    background-color: $color-bg-light;
 
     th {
-      padding: 12px;
+      padding: $spacing-sm $spacing-md;
       text-align: left;
-      font-weight: 600;
-      font-size: 13px;
-      color: #444;
-      border-bottom: 1px solid #e0e0e0;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-sm;
+      color: $color-text-primary;
+      border-bottom: 1px solid $color-border;
     }
 
     .name-header {
-      width: 70%;
-      border-right: 1px solid #e0e0e0;
+      width: 75%;
+      border-right: 1px solid $color-border;
     }
 
     .actions-header {
-      width: 20%;
+      width: 25%;
     }
   }
 
   tbody {
     tr {
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid $color-border;
+
+      &:nth-child(even) {
+        background-color: $color-bg-light;
+      }
+
+      &:nth-child(odd) {
+        background-color: $color-white;
+      }
 
       td {
-        padding: 4px 12px;
+        padding: $spacing-sm $spacing-md;
         vertical-align: middle;
+        font-size: $font-size-base;
+        color: $color-text-primary;
       }
 
       .name-cell {
-        width: 80%;
+        width: 75%;
+        font-weight: $font-weight-normal;
+
+        .name-wrapper {
+          display: flex;
+          align-items: center;
+          gap: $spacing-sm;
+
+          .dot-icon {
+            color: $color-orange-light;
+          }
+
+          .name-label {
+            display: flex;
+            flex-direction: column;
+
+            .primary {
+              font-weight: $font-weight-semibold;
+              font-size: $font-size-base;
+              color: $color-text-primary;
+            }
+
+            .secondary {
+              font-size: $font-size-sm;
+              color: $color-text-muted;
+              margin-top: 2px;
+            }
+          }
+        }
       }
 
       .actions-cell {
-        width: 20%;
-        border-left: 1px solid #e0e0e0;
-        box-shadow: -6px 0 6px -4px rgba(0, 0, 0, 0.1);
+        width: 25%;
+        border-left: 1px solid $color-border;
+        box-shadow: -6px 0 6px -4px rgba(0, 0, 0, 0.05);
       }
     }
   }
@@ -51,29 +94,28 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 8px;
+    gap: $spacing-sm;
   }
 
   .action-button {
-    background: #ffffff;
-    border: 1px solid #dcdcdc;
-    border-radius: 2px;
-    padding: 0px 4px;
-    font-size: 12px;
-    cursor: pointer;
-    height: 24px;
+    background: $color-white;
+    border: 1px solid $color-button-border;
+    border-radius: $radius-sm;
+    padding: 0 $spacing-md;
+    font-size: $font-size-sm;
+    height: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
 
-  .icon-btn {
-    width: 24px;
-    padding: 0;
+    &:hover {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
   }
 
   mat-icon {
-    font-size: 20px;
-    color: #555;
+    color: $color-text-primary;
   }
 }

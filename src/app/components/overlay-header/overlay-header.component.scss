@@ -1,48 +1,49 @@
+@use "../../../styles/theme" as *;
+
 .overlay-header {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  background: $color-bg-light;
+  border-bottom: 1px solid $color-border;
 
   .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem 0.5rem 1rem; // tighter bottom padding
+    padding: $spacing-md $spacing-md $spacing-sm $spacing-md;
 
     .title-group {
       display: flex;
       flex-direction: column;
 
       .title {
-        font-size: 1.25rem;
-        font-weight: 600;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
         margin: 0;
-        color: #1a1a1a;
+        color: $color-text-primary;
       }
 
       .subtitle {
-        font-size: 0.875rem;
-        color: #777;
+        font-size: $font-size-sm;
+        color: $color-text-muted;
         margin-top: 0.2rem;
       }
     }
 
     .action-button {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 2px;
-      padding: 2px;
+      background-color: $color-button-bg;
+      border: 1px solid $color-button-border;
+      border-radius: $radius-md;
+      padding: 4px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: $color-button-hover-shadow;
       transition: box-shadow 0.2s ease;
 
       mat-icon {
-        font-size: 20px;
-        color: #333;
+        color: $color-text-primary;
       }
 
       &:hover {
@@ -53,29 +54,31 @@
 
   .header-tabs {
     display: flex;
-    padding: 0 1rem;
-    border-top: 1px solid transparent;
-    height: 40px;
+    padding: 0 $spacing-md;
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-md;
     margin-left: 0.6rem;
-    margin-top: 1.5rem;
+
     align-items: flex-end;
 
     .tab {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #666;
-      padding: 0 0.6rem;
-      padding-bottom: 0.8rem;
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      padding: 0 $spacing-md;
+      padding-bottom: $spacing-xs;
+      padding-top: $spacing-xs;
       cursor: pointer;
-      border-bottom: 2px solid transparent;
       height: 100%;
       display: flex;
       align-items: flex-end;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
     .tab.active {
-      color: #1976d2;
-      border-color: #1976d2;
+      color: $color-orange-light;
+      background-color: $color-white;
+      border-radius: $radius-sm $radius-sm;
     }
   }
 }
