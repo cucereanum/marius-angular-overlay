@@ -1,5 +1,9 @@
 <div class="section-container">
-  <div class="section-header" (click)="toggle()">
+  <div
+    class="section-header"
+    (click)="toggle()"
+    [attr.aria-label]="'Toggle' + title + ' section'"
+  >
     <div class="left">
       <mat-icon class="section-icon">{{ iconName }}</mat-icon>
       <span class="section-title">{{ title }}</span>
@@ -14,16 +18,27 @@
     </div>
 
     <div class="right">
-      <mat-icon class="icon-button">more_horiz</mat-icon>
-      <mat-icon class="icon-button expand-icon">
-        {{ isOpen ? "expand_more" : "chevron_right" }}
-      </mat-icon>
+      <app-action-button
+        icon="more_horiz"
+        type="icon"
+        ariaLabel="More options"
+      />
+
+      <app-action-button
+        [icon]="isOpen ? 'expand_more' : 'chevron_right'"
+        type="icon"
+        [attr.aria-label]="isOpen ? 'Collapse section' : 'Expand section'"
+      />
     </div>
   </div>
 
-  <div class="section-body" *ngIf="isOpen">
-    <ng-container *ngIf="isOpen">
-      <app-entity-table [items]="sectionItems"></app-entity-table>
-    </ng-container>
+  <div
+    class="section-body"
+    [@collapse]="isOpen ? 'open' : 'closed'"
+    [style.display]="isOpen || isAnimating ? 'block' : 'none'"
+    (@collapse.start)="onAnimationStart()"
+    (@collapse.done)="onAnimationDone()"
+  >
+    <app-entity-table [items]="sectionItems"></app-entity-table>
   </div>
 </div>

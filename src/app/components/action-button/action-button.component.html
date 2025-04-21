@@ -1,0 +1,23 @@
+<div *ngIf="type === 'primary'" class="action-wrapper">
+  <button
+    class="action-button label"
+    [ngClass]="type"
+    [attr.aria-label]="ariaLabel || label || icon"
+    (click)="onPress.emit()"
+  >
+    <span *ngIf="label">{{ label }}</span>
+  </button>
+</div>
+
+<button
+  *ngIf="type === 'icon'"
+  class="action-button"
+  [ngClass]="{
+    icon: true,
+    large: size === 'large'
+  }"
+  [attr.aria-label]="ariaLabel || label || icon"
+  (click)="onPress.emit()"
+>
+  <mat-icon>{{ icon }}</mat-icon>
+</button>

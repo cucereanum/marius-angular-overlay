@@ -5,9 +5,13 @@
       <span class="subtitle">{{ subtitle }}</span>
     </div>
 
-    <button class="action-button" (click)="onClose()">
-      <mat-icon>close</mat-icon>
-    </button>
+    <app-action-button
+      icon="close"
+      type="icon"
+      size="large"
+      ariaLabel="Close overlay"
+      (onPress)="onClose()"
+    />
   </div>
 
   <div class="header-tabs">

@@ -1,8 +1,8 @@
-<table class="entity-table">
+<table class="entity-table" role="table">
   <thead>
     <tr>
-      <th class="name-header">Name</th>
-      <th class="actions-header">Actions</th>
+      <th class="name-header" scope="col">Name</th>
+      <th class="actions-header" scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,9 +16,7 @@
         </div>
       </td>
       <td class="actions-cell">
-        <div class="action-wrapper">
-          <button class="action-button">Preview</button>
-        </div>
+        <app-action-button label="Preview" ariaLabel="Preview item" />
       </td>
     </tr>
     <tr *ngIf="items.length === 0" class="empty-row">

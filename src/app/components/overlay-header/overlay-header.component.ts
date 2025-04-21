@@ -1,12 +1,14 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+
 import { OverlayService } from '../../services/overlay.service';
+import { ActionButtonComponent } from '../action-button/action-button.component';
 
 @Component({
   selector: 'app-overlay-header',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, ActionButtonComponent],
   templateUrl: './overlay-header.component.html',
   styleUrls: ['./overlay-header.component.scss'],
 })
