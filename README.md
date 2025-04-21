@@ -4,6 +4,18 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
+To install the project dependencies, run:
+
+```bash
+yarn install
+```
+
+If you're using npm instead of yarn, you can alternatively run:
+
+```bash
+npm install
+```
+
 To start a local development server, run:
 
 ```bash
