@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {
@@ -65,6 +65,7 @@ export class CollapsibleSectionComponent {
   private overlaySub!: Subscription;
 
   constructor(private overlayService: OverlayService) {}
+  @ViewChild('tableSection') tableRef?: ElementRef<HTMLDivElement>;
 
   ngOnInit() {
     this.overlaySub = this.overlayService.isVisible$.subscribe((isVisible) => {
@@ -78,6 +79,16 @@ export class CollapsibleSectionComponent {
 
   toggle() {
     this.isOpen = !this.isOpen;
+
+    // Wait for DOM to update before scrolling
+    if (this.isOpen) {
+      setTimeout(() => {
+        this.tableRef?.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }, 250);
+    }
   }
 
   onAnimationStart() {
