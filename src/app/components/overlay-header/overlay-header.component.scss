@@ -29,33 +29,12 @@
         margin-top: 0.2rem;
       }
     }
-
-    .action-button {
-      background-color: $color-button-bg;
-      border: 1px solid $color-button-border;
-      border-radius: $radius-md;
-      padding: 4px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: $color-button-hover-shadow;
-      transition: box-shadow 0.2s ease;
-
-      mat-icon {
-        color: $color-text-primary;
-      }
-
-      &:hover {
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      }
-    }
   }
 
   .header-tabs {
     display: flex;
     padding: 0 $spacing-md;
-    margin-top: $spacing-md;
+    margin-top: $spacing-lg;
     margin-bottom: $spacing-md;
     margin-left: 0.6rem;
 

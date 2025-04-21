@@ -1,9 +1,5 @@
 <div class="section-container">
-  <div
-    class="section-header"
-    (click)="toggle()"
-    [attr.aria-label]="'Toggle' + title + ' section'"
-  >
+  <div class="section-header" [attr.aria-label]="'Toggle' + title + ' section'">
     <div class="left">
       <mat-icon class="section-icon">{{ iconName }}</mat-icon>
       <span class="section-title">{{ title }}</span>
@@ -22,11 +18,13 @@
         icon="more_horiz"
         type="icon"
         ariaLabel="More options"
+        (click)="toggle()"
       />
 
       <app-action-button
         [icon]="isOpen ? 'expand_more' : 'chevron_right'"
         type="icon"
+        (click)="toggle()"
         [attr.aria-label]="isOpen ? 'Collapse section' : 'Expand section'"
       />
     </div>

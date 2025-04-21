@@ -1,3 +1,5 @@
+@use "../../../styles/theme" as *;
+
 .overlay-backdrop {
   position: fixed;
   top: 0;
@@ -12,7 +14,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 100%;
+  height: $size-percentage-100;
   width: 600px;
   background-color: #ffffff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
@@ -59,7 +61,7 @@
   height: 3rem;
 }
 .data-table {
-  width: 100%;
+  width: $size-percentage-100;
   border-collapse: collapse;
 
   th,
