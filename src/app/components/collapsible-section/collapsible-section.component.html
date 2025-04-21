@@ -3,7 +3,14 @@
     <div class="left">
       <mat-icon class="section-icon">{{ iconName }}</mat-icon>
       <span class="section-title">{{ title }}</span>
-      <span class="section-badge">{{ count }}</span>
+      <ng-container *ngIf="title === 'Tasks'">
+        <app-badge label="0 Open"></app-badge>
+        <app-badge label="0 Recurring"></app-badge>
+      </ng-container>
+
+      <ng-container *ngIf="title !== 'Tasks'">
+        <app-badge [label]="count.toString()"></app-badge>
+      </ng-container>
     </div>
 
     <div class="right">
@@ -15,7 +22,7 @@
   </div>
 
   <div class="section-body" *ngIf="isOpen">
-    <ng-container *ngIf="isOpen && count > 0">
+    <ng-container *ngIf="isOpen">
       <app-entity-table [items]="sectionItems"></app-entity-table>
     </ng-container>
   </div>

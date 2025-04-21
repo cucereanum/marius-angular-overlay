@@ -1,0 +1,22 @@
+@use "../../../styles/theme" as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-pill;
+  line-height: 1;
+
+  &.orange {
+    background-color: $color-orange-light;
+    color: $color-white;
+  }
+
+  &.gray {
+    background-color: $color-gray-badge;
+    color: $color-text-primary;
+  }
+}

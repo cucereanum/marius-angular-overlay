@@ -29,6 +29,7 @@
   border-left: 1px solid #ddd;
   overflow: hidden;
   padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .overlay-body {
@@ -52,6 +53,10 @@
 
 .overlay-content {
   padding: 1rem;
+  padding-bottom: 3rem;
+}
+.scroll-spacer {
+  height: 3rem;
 }
 .data-table {
   width: 100%;

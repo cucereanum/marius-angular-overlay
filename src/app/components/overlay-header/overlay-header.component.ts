@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { OverlayService } from '../../services/overlay.service';
 
 @Component({
   selector: 'app-overlay-header',
@@ -16,7 +17,12 @@ export class OverlayHeaderComponent {
   @Input() selectedTab: string = '';
   @Output() tabChanged = new EventEmitter<string>();
 
+  constructor(private overlayService: OverlayService) {}
+
   onTabClick(tab: string) {
     this.tabChanged.emit(tab);
+  }
+  onClose() {
+    this.overlayService.close();
   }
 }

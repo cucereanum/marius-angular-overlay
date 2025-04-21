@@ -17,7 +17,12 @@ export class OverlayComponent {
   isVisible$: Observable<boolean>;
   selectedTab: string = 'Details';
 
-  businessFunctions = [{ name: 'test 2' }, { name: 'test' }];
+  businessFunctions = [
+    { name: 'test 1' },
+    { name: 'test 2' },
+    { name: 'test 3' },
+    { name: 'test 4' },
+  ];
   sections = [
     { title: 'Tasks', count: 0, iconName: 'checklist' },
     { title: 'Risks', count: 0, iconName: 'warning' },

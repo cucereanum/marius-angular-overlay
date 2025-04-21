@@ -2,14 +2,14 @@
   <thead>
     <tr>
       <th class="name-header">Name</th>
-      <th class="actions-header"></th>
+      <th class="actions-header">Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of items">
       <td class="name-cell">
         <div class="name-wrapper">
-          <mat-icon class="dot-icon">more_vert</mat-icon>
+          <!-- <mat-icon class="dot-icon">more_vert</mat-icon> -->
           <div class="name-label">
             <div class="primary">{{ item.name }}</div>
           </div>
@@ -20,6 +20,9 @@
           <button class="action-button">Preview</button>
         </div>
       </td>
+    </tr>
+    <tr *ngIf="items.length === 0" class="empty-row">
+      <td colspan="2" class="empty-cell">No items available</td>
     </tr>
   </tbody>
 </table>
