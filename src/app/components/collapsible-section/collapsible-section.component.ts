@@ -80,7 +80,6 @@ export class CollapsibleSectionComponent {
   toggle() {
     this.isOpen = !this.isOpen;
 
-    // Wait for DOM to update before scrolling
     if (this.isOpen) {
       setTimeout(() => {
         this.tableRef?.nativeElement.scrollIntoView({
